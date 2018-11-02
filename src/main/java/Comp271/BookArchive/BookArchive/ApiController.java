@@ -27,14 +27,18 @@ public class ApiController {
     }
     @RequestMapping(value="api/books/booksbytitle",method=RequestMethod.POST)
     @ResponseBody
-    public String booksbytitle(){
-        return "booksbytitle";
+    public Book[] booksbytitle(){
+        Book[] arr= {new Book("Programming for Dummies","John Doe","COMP",170),
+                new Book("Useless English Book","Some Guy","ENGL",102)};
+        return arr;
     }
 
     @RequestMapping(value="api/books/booksbyclass",method=RequestMethod.POST)
     @ResponseBody
-    public String booksbyclass(){
-        return "booksbyclass";
+    public Book[] booksbyclass(){
+        Book[] arr= {new Book("Programming for Dummies","John Doe","COMP",170),
+                new Book("Useless English Book","Some Guy","ENGL",102)};
+        return arr;
     }
 
     @GetMapping("/api/user")
