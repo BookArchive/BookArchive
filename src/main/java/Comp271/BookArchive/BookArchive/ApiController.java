@@ -1,5 +1,6 @@
 package Comp271.BookArchive.BookArchive;
 
+
 import Comp271.BookArchive.BookArchive.DataModels.Book;
 import Comp271.BookArchive.BookArchive.DataModels.BookRepository;
 import Comp271.BookArchive.BookArchive.DataModels.User;
@@ -7,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.NamedQuery;
+import java.util.ArrayList;
 import java.util.List;
+
 
 /*
     Main Route Controller for the Application
@@ -32,6 +35,8 @@ public class ApiController {
     public User deleteUser(@RequestBody User u){
         System.out.println();
         User temp =  userService.findByUsername(u.getUsername()).get(0);
+
+
         return userService.deleteUser(temp);
     }
 
