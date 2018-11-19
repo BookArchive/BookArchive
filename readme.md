@@ -65,7 +65,16 @@ maven can be a little more tricky.
 
 
 
+# GIT REPOs
 
+1. There are three branches in this repository master, APIexamples, and sandbox
+  a. master - DO NOT COMMIT INDIVIDUAL CHANGES TO THIS BRANCH (unless it is a readme file or something not code) this will be 
+     reserverd for the last working version of app 
+  b. sandbox - this branch is specifically for pulling  in individual changes and handling merge conflicts
+  c. APIexamples - this is just example code to reference for using Spring (it does actually compile and run)
 
+2. once we deal with all of the merge conflicts and testing in sandbox we can merge that branch to master as a new version
+3. Ive started a few issues already for a small team like ours they arent really neccessary but they are an easy way to  
+   improve your contribution count which people can see. 
 
 
