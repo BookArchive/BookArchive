@@ -22,10 +22,10 @@
 </div>
 
 <div class="topnav">
-    <a class="active" href="#home">Home</a>
-    <a href="dashboard.html">Dashboard</a>
+    <a class="active" href="#home">Home</a> 
+    <a href="dashboard.html">Dashboard</a> 
     <div class="search-container">
-        <form action="searchresults.html" method= "post">
+        <form action="api/user" method= "get">
             <input type="text" placeholder="Search" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
@@ -42,7 +42,7 @@
                 <div class="dropdown">
                     <button class="dropbtn">College Writing Seminar</button>
                     <div class="dropdown-content">
-                        <a href="#">UCWR 110</a>
+                        <button class= "classbtn" onclick="classBtnClick(this.id)" id= "UCWR-110" onClick="classBtnClick(this.id)">UCWR 110</button>
                     </div>
                 </div>
 
@@ -51,9 +51,9 @@
                 <div class="dropdown">
                     <button class="dropbtn"> Artistic Knowledge and Experience </button>
                     <div class="dropdown-content">
-                        <a href="#">CLST 206</a>
-                        <a href="#">CLST 207</a>
-                        <a href="#">MORE...</a>
+                        <button id="CLST-206" class= "classbtn" onclick="classBtnClick(this.id)">CLST 206</button> 
+                        <button id="CLST-207" class= "classbtn" onclick="classBtnClick(this.id)">CLST 207</button> 
+                        <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                     </div>
                 </div>
             </li>
@@ -61,9 +61,9 @@
                 <div class="dropdown">
                     <button class="dropbtn"> Historical Knowledge </button>
                     <div class="dropdown-content">
-                        <a href="#">HIST 101</a>
-                        <a href="#">HIST 102</a>
-                        <a href="#">MMORE...</a>
+                        <button id="HIST-101" class= "classbtn" onclick="classBtnClick(this.id)">HIST 101</button> 
+                        <button id="HIST-102" class= "classbtn" onclick="classBtnClick(this.id)">HIST 102</button> 
+                        <button class= "classbtn" onclick="classBtnClick(this.id)">MMORE...</button> 
                     </div>
                 </div>
             </li>
@@ -71,9 +71,9 @@
                 <div class="dropdown">
                     <button class="dropbtn"> Literary Knowledge and Experience</button>
                     <div class="dropdown-content">
-                        <a href="#">UCLR 100</a>
-                        <a href="#">CLST 271</a>
-                        <a href="#">MORE...</a>
+                        <button id="UCLR-100" class= "classbtn" onclick="classBtnClick(this.id)">UCLR 100</button> 
+                        <button id="CLST-271" class= "classbtn" onclick="classBtnClick(this.id)">CLST 271</button> 
+                        <button  class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                     </div>
                 </div>
             </li>
@@ -81,9 +81,9 @@
                 <div class="dropdown">
                     <button class="dropbtn"> Quantitative Analysis </button>
                     <div class="dropdown-content">
-                        <a href="#">CJC 206</a>
-                        <a href="#">COMP 125</a>
-                        <a href="#">MORE...</a>
+                        <button id="CJC-206" class= "classbtn" onclick="classBtnClick(this.id)">CJC 206</button> 
+                        <button id="COMP-125" class= "classbtn" onclick="classBtnClick(this.id)">COMP 125</button> 
+                        <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                     </div>
                 </div>
             </li>
@@ -91,9 +91,9 @@
                 <div class="dropdown">
                     <button class="dropbtn"> Scientific Literacy </button>
                     <div class="dropdown-content">
-                        <a href="#">UCSF 137</a>
-                        <a href="#">ANTH 101</a>
-                        <a href="#">MORE...</a>
+                        <button id="UCSF-137" class= "classbtn" onclick="classBtnClick(this.id)">UCSF 137</button> 
+                        <button id="ANTH-101" class= "classbtn" onclick="classBtnClick(this.id)">ANTH 101</button> 
+                        <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                     </div>
                 </div>
             </li>
@@ -101,9 +101,9 @@
                 <div class="dropdown">
                     <button class="dropbtn"> Societal and Cultural Knowledge </button>
                     <div class="dropdown-content">
-                        <a href="#">ANTH 100</a>
-                        <a href="#">PLSC 1O2</a>
-                        <a href="#">MORE...</a>
+                        <button id="ANTH-100" class= "classbtn" onclick="classBtnClick(this.id)">ANTH 100</button> 
+                        <button id="PLSC-102" class= "classbtn" onclick="classBtnClick(this.id)">PLSC 1O2</button> 
+                        <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                     </div>
                 </div>
             </li>
@@ -111,9 +111,9 @@
                 <div class="dropdown">
                     <button class="dropbtn"> Philosophical Knowledge </button>
                     <div class="dropdown-content">
-                        <a href="#">PHIL 130</a>
-                        <a href="#">PHIL 191</a>
-                        <a href="#">MORE...</a>
+                        <button id="PHIL-130" class= "classbtn" onclick="classBtnClick(this.id)">PHIL 130</button> 
+                        <button id="PHIL-191" class= "classbtn" onclick="classBtnClick(this.id)">PHIL 191</button> 
+                        <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                     </div>
                 </div>
             </li>
@@ -121,9 +121,9 @@
                 <div class="dropdown">
                     <button class="dropbtn"> Theological and Religious Studies Knowledge </button>
                     <div class="dropdown-content">
-                        <a href="#">THEO 203</a>
-                        <a href="#">THEO 204</a>
-                        <a href="#">MORE...</a>
+                        <button id="THEO-203" class= "classbtn" onclick="classBtnClick(this.id)">THEO 203</button> 
+                        <button id="THEO-204" class= "classbtn" onclick="classBtnClick(this.id)">THEO 204</button> 
+                        <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                     </div>
                 </div>
             </li>
@@ -131,9 +131,9 @@
                 <div class="dropdown">
                     <button class="dropbtn"> Ethics </button>
                     <div class="dropdown-content">
-                        <a href="#">PHIL 181</a>
-                        <a href="#">PHIL 182</a>
-                        <a href="#">MORE...</a>
+                        <button id="PHIL-181" class= "classbtn" onclick="classBtnClick(this.id)">PHIL 181</button> 
+                        <button id="PHIL-182" class= "classbtn" onclick="classBtnClick(this.id)">PHIL 182</button> 
+                        <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                     </div>
                 </div>
             </li>
@@ -181,9 +181,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn">Accounting</button>
                                 <div class="dropdown-content">
-                                    <a href="#">ACCT 201</a>
-                                    <a href="#">ACCT 202</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="ACCT-201" class= "classbtn" onclick="classBtnClick(this.id)">ACCT 201</button> 
+                                    <button id="ACCT-202" class= "classbtn" onclick="classBtnClick(this.id)">ACCT 202</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
 
@@ -192,9 +192,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Advertising and Public Relations </button>
                                 <div class="dropdown-content">
-                                    <a href="#">COMM 100</a>
-                                    <a href="#">COMM 175</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="COMM-100" class= "classbtn" onclick="classBtnClick(this.id)">COMM 100</button> 
+                                    <button id="COMM-175" class= "classbtn" onclick="classBtnClick(this.id)">COMM 175</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -202,9 +202,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Advertising Creative</button>
                                 <div class="dropdown-content">
-                                    <a href="#">COMM 200</a>
-                                    <a href="#">COMM 215</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="COMM-200" class= "classbtn" onclick="classBtnClick(this.id)">COMM 200</button> 
+                                    <button id="COMM-215" class= "classbtn" onclick="classBtnClick(this.id)">COMM 215</button> 
+                                    <button  class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -212,9 +212,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> African Studies and the African Diaspora</button>
                                 <div class="dropdown-content">
-                                    <a href="#">UCLR 100</a>
-                                    <a href="#">CLST 271</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="UCLR-100" class= "classbtn" onclick="classBtnClick(this.id)">UCLR 100</button> 
+                                    <button id="CLST-271" class= "classbtn" onclick="classBtnClick(this.id)">CLST 271</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -222,9 +222,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Quantitative Analysis </button>
                                 <div class="dropdown-content">
-                                    <a href="#">CJC 206</a>
-                                    <a href="#">COMP 125</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="CJC-206" class= "classbtn" onclick="classBtnClick(this.id)">CJC 206</button> 
+                                    <button id="COMP-125" class= "classbtn" onclick="classBtnClick(this.id)">COMP 125</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -238,7 +238,7 @@
                             <div class="dropdown">
                                 <button class="dropbtn">B classes</button>
                                 <div class="dropdown-content">
-                                    <a href="#">UCWR 110</a>
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">UCWR 110</button> 
                                 </div>
                             </div>
 
@@ -247,9 +247,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Artistic Knowledge and Experience </button>
                                 <div class="dropdown-content">
-                                    <a href="#">CLST 206</a>
-                                    <a href="#">CLST 207</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="CLST-206" class= "classbtn" onclick="classBtnClick(this.id)">CLST 206</button> 
+                                    <button id="CLST-207" class= "classbtn" onclick="classBtnClick(this.id)">CLST 207</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -257,9 +257,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Historical Knowledge </button>
                                 <div class="dropdown-content">
-                                    <a href="#">HIST 101</a>
-                                    <a href="#">HIST 102</a>
-                                    <a href="#">MMORE...</a>
+                                    <button id="HIST-101" class= "classbtn" onclick="classBtnClick(this.id)">HIST 101</button> 
+                                    <button id="HIST-102" class= "classbtn" onclick="classBtnClick(this.id)">HIST 102</button> 
+                                    <button  class= "classbtn" onclick="classBtnClick(this.id)">MMORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -267,9 +267,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Literary Knowledge and Experience</button>
                                 <div class="dropdown-content">
-                                    <a href="#">UCLR 100</a>
-                                    <a href="#">CLST 271</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="UCLR-100" class= "classbtn" onclick="classBtnClick(this.id)">UCLR 100</button> 
+                                    <button id="CLST-271" class= "classbtn" onclick="classBtnClick(this.id)">CLST 271</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -277,9 +277,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Quantitative Analysis </button>
                                 <div class="dropdown-content">
-                                    <a href="#">CJC 206</a>
-                                    <a href="#">COMP 125</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="CJC-206" class= "classbtn" onclick="classBtnClick(this.id)">CJC 206</button> 
+                                    <button id="COMP-125" class= "classbtn" onclick="classBtnClick(this.id)">COMP 125</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -293,7 +293,7 @@
                             <div class="dropdown">
                                 <button class="dropbtn">C Classes</button>
                                 <div class="dropdown-content">
-                                    <a href="#">UCWR 110</a>
+                                    <button id="UCWR-110" class= "classbtn" onclick="classBtnClick(this.id)">UCWR 110</button> 
                                 </div>
                             </div>
 
@@ -302,9 +302,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Artistic Knowledge and Experience </button>
                                 <div class="dropdown-content">
-                                    <a href="#">CLST 206</a>
-                                    <a href="#">CLST 207</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="CLST-206" class= "classbtn" onclick="classBtnClick(this.id)">CLST 206</button> 
+                                    <button id="CLST-207" class= "classbtn" onclick="classBtnClick(this.id)">CLST 207</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -312,9 +312,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Historical Knowledge </button>
                                 <div class="dropdown-content">
-                                    <a href="#">HIST 101</a>
-                                    <a href="#">HIST 102</a>
-                                    <a href="#">MMORE...</a>
+                                    <button id="HIST-101" class= "classbtn" onclick="classBtnClick(this.id)">HIST 101</button> 
+                                    <button id="HIST-102" class= "classbtn" onclick="classBtnClick(this.id)">HIST 102</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MMORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -322,9 +322,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Literary Knowledge and Experience</button>
                                 <div class="dropdown-content">
-                                    <a href="#">UCLR 100</a>
-                                    <a href="#">CLST 271</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="UCLR-100" class= "classbtn" onclick="classBtnClick(this.id)">UCLR 100</button> 
+                                    <button id="CLST-271" class= "classbtn" onclick="classBtnClick(this.id)">CLST 271</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -332,9 +332,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Quantitative Analysis </button>
                                 <div class="dropdown-content">
-                                    <a href="#">CJC 206</a>
-                                    <a href="#">COMP 125</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="CJC-206" class= "classbtn" onclick="classBtnClick(this.id)">CJC 206</button> 
+                                    <button id="COMP-125" class= "classbtn" onclick="classBtnClick(this.id)">COMP 125</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -348,7 +348,7 @@
                             <div class="dropdown">
                                 <button class="dropbtn">D classes</button>
                                 <div class="dropdown-content">
-                                    <a href="#">UCWR 110</a>
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">UCWR 110</button> 
                                 </div>
                             </div>
 
@@ -357,9 +357,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Artistic Knowledge and Experience </button>
                                 <div class="dropdown-content">
-                                    <a href="#">CLST 206</a>
-                                    <a href="#">CLST 207</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="CLST-206" class= "classbtn" onclick="classBtnClick(this.id)">CLST 206</button> 
+                                    <button id="CLST-207" class= "classbtn" onclick="classBtnClick(this.id)">CLST 207</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -367,9 +367,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Historical Knowledge </button>
                                 <div class="dropdown-content">
-                                    <a href="#">HIST 101</a>
-                                    <a href="#">HIST 102</a>
-                                    <a href="#">MMORE...</a>
+                                    <button id="HIST-101" class= "classbtn" onclick="classBtnClick(this.id)">HIST 101</button> 
+                                    <button id="HIST-102" class= "classbtn" onclick="classBtnClick(this.id)">HIST 102</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MMORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -377,9 +377,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Literary Knowledge and Experience</button>
                                 <div class="dropdown-content">
-                                    <a href="#">UCLR 100</a>
-                                    <a href="#">CLST 271</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="UCLR-100" class= "classbtn" onclick="classBtnClick(this.id)">UCLR 100</button> 
+                                    <button id="CLST-271" class= "classbtn" onclick="classBtnClick(this.id)">CLST 271</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -387,9 +387,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Quantitative Analysis </button>
                                 <div class="dropdown-content">
-                                    <a href="#">CJC 206</a>
-                                    <a href="#">COMP 125</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="CJC-206" class= "classbtn" onclick="classBtnClick(this.id)">CJC 206</button> 
+                                    <button id="COMP-125" class= "classbtn" onclick="classBtnClick(this.id)">COMP 125</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -402,7 +402,7 @@
                         <div class="dropdown">
                             <button class="dropbtn"> E classes </button>
                             <div class="dropdown-content">
-                                <a href="#">UCWR 110</a>
+                                <button id="UCWR-110" class= "classbtn" onclick="classBtnClick(this.id)">UCWR 110</button> 
                             </div>
                         </div>
 
@@ -411,9 +411,9 @@
                         <div class="dropdown">
                             <button class="dropbtn"> Artistic Knowledge and Experience </button>
                             <div class="dropdown-content">
-                                <a href="#">CLST 206</a>
-                                <a href="#">CLST 207</a>
-                                <a href="#">MORE...</a>
+                                <button id="CLST-206" class= "classbtn" onclick="classBtnClick(this.id)">CLST 206</button> 
+                                <button id="CLST-207" class= "classbtn" onclick="classBtnClick(this.id)">CLST 207</button> 
+                                <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                             </div>
                         </div>
                     </li>
@@ -421,19 +421,19 @@
                         <div class="dropdown">
                             <button class="dropbtn"> Historical Knowledge </button>
                             <div class="dropdown-content">
-                                <a href="#">HIST 101</a>
-                                <a href="#">HIST 102</a>
-                                <a href="#">MMORE...</a>
+                                <button id="HIST-101" class= "classbtn" onclick="classBtnClick(this.id)">HIST 101</button> 
+                                <button id="HIST-102" class= "classbtn" onclick="classBtnClick(this.id)">HIST 102</button> 
+                                <button class= "classbtn" onclick="classBtnClick(this.id)">MMORE...</button> 
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="dropdown">
-                            <button class="dropbtn"> Literary Knowledge and Experience</button>
+                            <button id="CLST-206" class="dropbtn"> Literary Knowledge and Experience</button>
                             <div class="dropdown-content">
-                                <a href="#">UCLR 100</a>
-                                <a href="#">CLST 271</a>
-                                <a href="#">MORE...</a>
+                                <button id="UCLR-100" class= "classbtn" onclick="classBtnClick(this.id)">UCLR 100</button> 
+                                <button id="CLST-271" class= "classbtn" onclick="classBtnClick(this.id)">CLST 271</button> 
+                                <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                             </div>
                         </div>
                     </li>
@@ -441,9 +441,9 @@
                         <div class="dropdown">
                             <button class="dropbtn"> Quantitative Analysis </button>
                             <div class="dropdown-content">
-                                <a href="#">CJC 206</a>
-                                <a href="#">COMP 125</a>
-                                <a href="#">MORE...</a>
+                                <button id="CJC-206" class= "classbtn" onclick="classBtnClick(this.id)">CJC 206</button> 
+                                <button id="COMP-125" class= "classbtn" onclick="classBtnClick(this.id)">COMP 125</button> 
+                                <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                             </div>
                         </div>
                     </li>
@@ -457,7 +457,7 @@
                             <div class="dropdown">
                                 <button class="dropbtn">D classes</button>
                                 <div class="dropdown-content">
-                                    <a href="#">UCWR 110</a>
+                                    <button id="UCWR-110" class= "classbtn" onclick="classBtnClick(this.id)">UCWR 110</button> 
                                 </div>
                             </div>
 
@@ -466,9 +466,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Artistic Knowledge and Experience </button>
                                 <div class="dropdown-content">
-                                    <a href="#">CLST 206</a>
-                                    <a href="#">CLST 207</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="CLST-206" class= "classbtn" onclick="classBtnClick(this.id)">CLST 206</button> 
+                                    <button id="CLST-207" class= "classbtn" onclick="classBtnClick(this.id)">CLST 207</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -476,9 +476,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Historical Knowledge </button>
                                 <div class="dropdown-content">
-                                    <a href="#">HIST 101</a>
-                                    <a href="#">HIST 102</a>
-                                    <a href="#">MMORE...</a>
+                                    <button id="HIST-101" class= "classbtn" onclick="classBtnClick(this.id)">HIST 101</button> 
+                                    <button id="HIST-102" class= "classbtn" onclick="classBtnClick(this.id)">HIST 102</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MMORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -486,9 +486,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Literary Knowledge and Experience</button>
                                 <div class="dropdown-content">
-                                    <a href="#">UCLR 100</a>
-                                    <a href="#">CLST 271</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="UCLR-100" class= "classbtn" onclick="classBtnClick(this.id)">UCLR 100</button> 
+                                    <button id="CLST-271" class= "classbtn" onclick="classBtnClick(this.id)">CLST 271</button> 
+                                    <button  class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -496,9 +496,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Quantitative Analysis </button>
                                 <div class="dropdown-content">
-                                    <a href="#">CJC 206</a>
-                                    <a href="#">COMP 125</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="CJC-206" class= "classbtn" onclick="classBtnClick(this.id)">CJC 206</button> 
+                                    <button id="COMP-125" class= "classbtn" onclick="classBtnClick(this.id)">COMP 125</button> 
+                                    <button  class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -512,7 +512,7 @@
                             <div class="dropdown">
                                 <button class="dropbtn">G classes</button>
                                 <div class="dropdown-content">
-                                    <a href="#">UCWR 110</a>
+                                    <button id="UCWR-110" class= "classbtn" onclick="classBtnClick(this.id)">UCWR 110</button> 
                                 </div>
                             </div>
 
@@ -521,9 +521,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Artistic Knowledge and Experience </button>
                                 <div class="dropdown-content">
-                                    <a href="#">CLST 206</a>
-                                    <a href="#">CLST 207</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="CLST-206" class= "classbtn" onclick="classBtnClick(this.id)">CLST 206</button> 
+                                    <button id="CLST-207" class= "classbtn" onclick="classBtnClick(this.id)">CLST 207</button> 
+                                    <button  class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -531,9 +531,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Historical Knowledge </button>
                                 <div class="dropdown-content">
-                                    <a href="#">HIST 101</a>
-                                    <a href="#">HIST 102</a>
-                                    <a href="#">MMORE...</a>
+                                    <button id="HIST-101" class= "classbtn" onclick="classBtnClick(this.id)">HIST 101</button> 
+                                    <button id="HIST-102" class= "classbtn" onclick="classBtnClick(this.id)">HIST 102</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MMORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -541,9 +541,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Literary Knowledge and Experience</button>
                                 <div class="dropdown-content">
-                                    <a href="#">UCLR 100</a>
-                                    <a href="#">CLST 271</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="UCLR-100" class= "classbtn" onclick="classBtnClick(this.id)">UCLR 100</button> 
+                                    <button id="CLST-271" class= "classbtn" onclick="classBtnClick(this.id)">CLST 271</button> 
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -551,9 +551,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn"> Quantitative Analysis </button>
                                 <div class="dropdown-content">
-                                    <a href="#">CJC 206</a>
-                                    <a href="#">COMP 125</a>
-                                    <a href="#">MORE...</a>
+                                    <button id="CJC-206" class= "classbtn" onclick="classBtnClick(this.id)">CJC 206</button> 
+                                    <button id="COMP-125" class="button">COMP 125</button>
+                                    <button class= "classbtn" onclick="classBtnClick(this.id)">MORE...</button> 
                                 </div>
                             </div>
                         </li>
@@ -566,7 +566,7 @@
         </div>
 <p> </p>
 
-<a href = "RRLoginPage.html" style="padding-left:60px"> Log Out </a>
+<a href = "RRLoginPage.html" style="padding-left:60px"> Log Out </button> 
 
         <!-- END MAIN -->
 
@@ -579,9 +579,9 @@
     <div class="dropdown">
         <button class="dropbtn">College Writing Seminar</button>
             <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <button class= "classbtn" onclick="classBtnClick(this.id)">Link 1</button> 
+                <button class= "classbtn" onclick="classBtnClick(this.id)">Link 2</button> 
+                <button class= "classbtn" onclick="classBtnClick(this.id)">Link 3</button> 
             </div>
     </div>
 
@@ -605,7 +605,66 @@
 </body>
 <script>
 
-filterSelection('a')
+filterSelection('a');
+
+    function classBtnClick(theId){
+         var str = $(theId).attr("id");
+         var arr = theId.split("-");
+         alert(arr);
+         let int =0;
+         int = arr[1];
+     
+         $.postJSON("api/booksbyclass",{
+             subject: arr[0],
+            classNum: int
+         },(data)=>{
+            console.log(data);
+         });
+    }
+    $.postJSON = function(url, data, callback) {
+        return jQuery.ajax({
+            headers: { 
+                'Accept': 'application/json',
+                'Content-Type': 'application/json' 
+            },
+            'type': 'POST',
+            'url': url,
+            'data': JSON.stringify(data),
+            'dataType': 'json',
+            'success': callback
+            });
+     }
+        
+
+ /*$(document).ready(function(){
+
+
+
+     $(".classbtn").click(()=>{
+         var idOfBtn = $(this).attr("id");
+         alert(idOfBtn);
+         var str = $(idOfBtn).text();
+         var arr = str.split(" ");
+         let int =0;
+         int = arr[1];
+     
+         $.postJSON("api/booksbyclass",{
+             subject: arr[0],
+            classNum: int
+         },(data)=>{
+            console.log(data);
+         });
+  
+     });
+ 
+
+    
+
+
+     function eventHandle(data){
+        console.log(data);
+     }
+});*/
 
 function filterSelection(c) {
   var x, i;

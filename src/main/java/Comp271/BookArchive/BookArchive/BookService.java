@@ -51,11 +51,14 @@ public class BookService implements IBookService{
     }
 
     @Override
-    public List<Book> findByClass(String subject, int courseNum) {
+    public List<Book> findByClass(String subject,int classNum) {
+        System.out.println(subject);
+
         try {
-            return repository.findByClass(subject,courseNum);
+            return repository.findByClass(subject,classNum);
         }catch (Exception e){
             System.out.println(e.getMessage());
+            System.out.println(e.getCause());
         }
         return null;
     }

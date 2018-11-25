@@ -6,8 +6,8 @@ import javax.annotation.Generated;
 import javax.persistence.*;
 
 @Entity
-@NamedQueries({@NamedQuery(name = "Book.findByTitle",query = "SELECT b FROM Book b WHERE b.title = ?5"),
-        @NamedQuery(name = "Book.findByClass",query = "SELECT b FROM Book b WHERE b.subject = ?4 AND b.classNum = ?1 ")})
+@NamedQueries({@NamedQuery(name = "Book.findByTitle",query = "SELECT b FROM Book b WHERE b.title =:title"),
+        @NamedQuery(name = "Book.findByClass",query = "SELECT b FROM Book b WHERE b.subject =:subject AND b.classNum =:classNum")})
 
 @Table(name = "Books")
 public class Book {

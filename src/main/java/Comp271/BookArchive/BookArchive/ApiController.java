@@ -62,6 +62,19 @@ public class ApiController {
         return books;
     }
 
+    @PostMapping("/api/booksbyclass")
+    public List<Book> apiBookByClass(@RequestBody Book b){
+        System.out.println(b.getSubject());
+        System.out.println(b.getClassNum());
+        //return bookService.findAll();
+        return bookService.findByClass(b.getSubject(),b.getClassNum());
+    }
+
+    @PostMapping("/api/booksbytitle")
+    public List<Book> apiBooksByTitle(@RequestBody Book b){
+        return bookService.findByTitle(b.getTitle());
+    }
+
     @GetMapping("/api/user")
     public List<User> apiUser(){
         List<User> users = userService.findAll();
