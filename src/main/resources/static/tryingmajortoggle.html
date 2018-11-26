@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="ssH2.css">
+
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+
+/* Center website */
+.Mmain {
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+.Mrow {
+    margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.Mrow,
+.Mrow > .Mcolumn {
+    padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.Mcolumn {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */
+.Mrow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.Mbtn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.Mbtn:hover {
+  background-color: #ddd;
+}
+
+.Mbtn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+
+
+
+    <div id="myBtnContainer">
+
+        <button class="Mbtn" onclick="filterSelection('b')"> B</button>
+        <button class="Mbtn" onclick="filterSelection('cars')"> Cars</button>
+        <button class="Mbtn" onclick="filterSelection('people')"> People</button>
+    </div>
+
+    <!-- Portfolio Gallery Grid -->
+    <div class="Mrow">
+
+        <div class="Mcolumn b">
+            <div class="dropdown">
+                <button class="dropbtn"> Ethics </button>
+                <div class="dropdown-content">
+                    <a href="#">PHIL 181</a>
+                    <a href="#">PHIL 182</a>
+                    <a href="#">MORE...</a>
+                </div>
+            </div>
+        </div>
+        <div class="Mcolumn nature">
+            <div class="content">
+                <h4>Forest</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+
+        <div class="Mcolumn cars">
+            <div class="content">
+                <h4>Retro</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="Mcolumn nature">
+            <div class="content">
+                <h4>Fast</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="Mcolumn cars">
+            <div class="content">
+                <h4>Classic</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+
+        <div class="Mcolumn people">
+            <div class="content">
+                <h4>Girl</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="Mcolumn people">
+            <div class="content">
+                <h4>Man</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="Mcolumn people">
+            <div class="content">
+                <h4>Woman</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <!-- END GRID -->
+    </div>
+
+    <!-- END MAIN -->
+
+
+<script>
+
+
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("Mcolumn");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("Mbtn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>

@@ -23,7 +23,8 @@
 
 <div class="topnav">
     <a class="active" href="#home">Home</a> 
-    <a href="dashboard.html">Dashboard</a> 
+    <a href="dashboard.html">Dashboard</a>
+    <a href="RRLoginPage.html">Log Out</a>
     <div class="search-container">
         <form action="api/user" method= "get">
             <input type="text" placeholder="Search" name="search">
@@ -566,7 +567,7 @@
         </div>
 <p> </p>
 
-<a href = "RRLoginPage.html" style="padding-left:60px"> Log Out </button> </a>
+<!--<a href = "RRLoginPage.html" style="padding-left:60px"> Log Out </button> </a>-->
 
         <!-- END MAIN -->
 
@@ -602,8 +603,15 @@
 
 -->
 <br>
+<h2 style="padding-left:80px" id = "Results"> </h2>
 
-<p id = "BookR"></p>
+<p style="padding-left:70px" id = "BookR"></p>
+
+<div style="padding-left:80px" id="tableGoesHere"> </div>
+
+<br>
+
+
 <!-- 
     FAILED ONLINE EXAMPLE 
     <p><form>
@@ -680,6 +688,8 @@ function displayBookData(input) {
 
 */
 
+var countResults = 0;
+
 
 function classBtnClick(theId){
      var str = $(theId).attr("id");
@@ -687,6 +697,8 @@ function classBtnClick(theId){
      alert(arr);
      let int =0;
      int = arr[1];
+
+
 
      $.postJSON("api/booksbyclass",{
          subject: arr[0],
@@ -696,6 +708,7 @@ function classBtnClick(theId){
        // displayBookData(data);
 
        var jsonStr = JSON.stringify(data);
+       var jsonLength = jsonStr.length;
        var regStr = ' '; // empty string to eventually hold the formatted strigified object 
        var f = { 
            brace: 0 
@@ -703,7 +716,38 @@ function classBtnClick(theId){
 
        //document.getElementById("BookR").innerHTML = jsonStr;
        
-       regeStr = jsonStr.replace(/({|}[,]*|[^{}:]+:[^{}:,]*[,{]*)/g, function (m, p1) {
+       	 if (countResults == 0) {
+        document.getElementById("Results").innerHTML += 'Results'
+        countResults += 1;
+        }
+        
+        if (jsonLength == 2) {
+        document.getElementById("BookR").innerHTML += 'There are no available books for this class at this time.' + '<br>'
+        document.getElementById('tableGoesHere').innerHTML = ""; 
+        }
+        else {
+        document.getElementById('BookR').innerHTML = ""; 
+        
+        
+        /*
+        
+        if (jsonStr.length().equals(0)) {
+		document.getElementById("Results").innerHTML += 'There is no available data for this book.'
+	}
+       
+       */
+       // trying a different approach to make a pretty table
+       
+       	//json2 table function
+       	
+    
+/*
+  
+	// end of deploying i t
+ 		*/		
+       // end of trying to make it into a pretty table
+       
+      regStr = jsonStr.replace(/({|}[,]*|[^{}:]+:[^{}:,]*[,{]*)/g, function (m, p1) {
         var rtnFn = function() {
                 return '<div style="text-indent: ' + (f['brace'] * 20) + 'px;">' + p1 + '</div>';
             },
@@ -720,9 +764,59 @@ function classBtnClick(theId){
             return rtnStr;
         });
 
-        document.getElementById("BookR").innerHTML += 'Results:' + regeStr; // appends the result to the body of the HTML documen
+	
 
+
+        //document.getElementById("BookR").innerHTML += regStr; // appends the result to the body of the HTML document
+        
+        // trying to make it into a pretty table 
+        
+        var defaultData = data;
+        document.getElementById('tableGoesHere').innerHTML = json2table(defaultData);
+        
+  }
             });
+            
+            
+            
+            // trying to make it into a pretty table 
+            function json2table(json, classes) {
+  var cols = Object.keys(json[0]);
+  
+  var headerRow = '';
+  var bodyRows = '';
+  
+  classes = classes || '';
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  cols.map(function(col) {
+    headerRow += '<th>' + capitalizeFirstLetter(col) + '</th>';
+  });
+
+  json.map(function(row) {
+    bodyRows += '<tr>';
+
+    cols.map(function(colName) {
+      bodyRows += '<td>' + row[colName] + '</td>';
+    })
+
+    bodyRows += '</tr>';
+  });
+
+  return '<table class="' +
+         classes +
+         '"><thead><tr>' +
+         headerRow +
+         '</tr></thead><tbody>' +
+         bodyRows +
+         '</tbody></table>';
+}
+
+
+	     
 
 
 }
@@ -824,4 +918,5 @@ this.className += " active";
 
 
 </html>
+
 
