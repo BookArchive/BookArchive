@@ -12,7 +12,7 @@ public class AppController {
 
     @GetMapping("/")
     public String home(){
-        return "RRLoginPage.html";
+        return "RRLogInPage.html";
     }
 
     @GetMapping("/dashboard")

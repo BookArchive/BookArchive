@@ -152,6 +152,25 @@ ul.nobullet {
     z-index: 1;
 }
 
+.classbtn {
+
+   background-color: white;
+   border: none;
+   color: black;
+   padding: 5px 89px 5px 5px;  /* top right bottom left  */
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size:14px;
+  /* margin: 2px 2px; */
+   cursor: pointer;
+
+}
+
+.classbtn:hover {
+  background-color: grey;
+}
+
 .dropdown-content a {
     color: black;
     padding: 5px 5px;
@@ -160,6 +179,7 @@ ul.nobullet {
 }
 
 .dropdown-content a:hover {background-color: grey;}
+.classbtn a:hover {background-color: grey;}
 
 .dropdown:hover .dropdown-content {display: block;}
 
@@ -237,3 +257,18 @@ ul.nobullet {
 }
 
 /* removed mbtn active */
+
+
+
+#tableGoesHere {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/*
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+*/
