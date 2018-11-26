@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 /* form {border: 3px solid #f1f1f1;} */
@@ -32,7 +33,15 @@ button {
 button:hover {
     opacity: 0.8;
 }
-
+#SignupSubmit {
+    background-color: #922247;
+    color: #FEBD18;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
 
 
 .imgcontainer {
@@ -67,30 +76,70 @@ span.psw {
 <body>
 
 
-<form action="/action_page.php">
     <div class="imgcontainer">
         <img src="https://www.sullyshouse.com/wp-content/uploads/2018/03/ramblers-logo.jpeg" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
-        <label for="uname" ><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        <label for="username" ><b>Username</b></label>
+        <input type="text" id="unametext" placeholder="Enter Username" name="username" required>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <label for="password"><b>Password</b></label>
+        <input type="password" id="pwordtext" placeholder="Enter Password" name="password" required>
 
-        <button type="submit"> <a href = "home.html" > Login </a> </button>
+        <button id="submit">  Login  </button>
+        <button id="SignupSubmit"> Sign up  </button>
 
         <span class="psw">Forgot <a href="#">password?</a></span>
         <label>
             <p> </p>
             <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
-
-
     </div>
-
-</form>
+ 
 
 </body>
+<script>
+
+
+    $(function(){
+        $("#SignupSubmit").click(()=>{
+            window.location.replace("/signup");
+        });
+        $("#submit").click(()=>{
+            let username = document.getElementById("unametext").value;
+            let pass = document.getElementById("pwordtext").value;
+            submitClicked(username,pass);
+
+        });        
+    });
+    function submitClicked(user,pass){
+            $.postJSON("api/login",{
+            username: user,
+            password: pass
+             },(data)=>{
+                 console.log(data);
+                 if(data == false){
+                     alert("username and/or password incorrect");
+                 }else{
+                    window.location.replace("/dashboard");
+                 }
+
+             });
+        }
+    $.postJSON = function(url, data, callback) {
+        return jQuery.ajax({
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        'type': 'POST',
+        'url': url,
+        'data': JSON.stringify(data),
+        'dataType': 'json',
+        'success': callback
+        });
+    }
+
+</script>
 </html>

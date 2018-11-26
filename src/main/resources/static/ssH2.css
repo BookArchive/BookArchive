@@ -236,4 +236,26 @@ ul.nobullet {
   background-color: #ddd;
 }
 
+input[type=text], input[type=password], input[type=number] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.button {
+    background-color: #FEBD18;
+    color: #922247;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
 /* removed mbtn active */
