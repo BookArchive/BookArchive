@@ -57,6 +57,7 @@ public class ApiController {
 
     @PostMapping("/api/login")
     public Boolean login(@RequestBody User u, HttpServletResponse response){
+       System.out.println("login");
         List<User> check = userService.findByUsername(u.getUsername());
         if(check != null && check.size()>0){
             if(check.get(0).getPassword().equals(u.getPassword()) == true){
@@ -64,6 +65,23 @@ public class ApiController {
                 cookie.setMaxAge(3600*24);
                response.addCookie(cookie);
                return true;
+            }
+        }
+        return false;
+    }
+
+    @GetMapping("/api/logout")
+    public Boolean logout(HttpServletRequest req,HttpServletResponse res){
+        System.out.println("logging out");
+        Cookie[] cookies = req.getCookies();
+        if(cookies.length>0){
+            for(Cookie c : cookies){
+                if(c.getName().equals("RamblerReadsUser")){
+                    Cookie cookie = new Cookie("RamblerReadsUser", c.getValue());
+                    cookie.setMaxAge(0);
+                    res.addCookie(cookie);
+                    return true;
+                }
             }
         }
         return false;

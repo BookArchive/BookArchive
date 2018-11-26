@@ -25,4 +25,7 @@ public class AppController {
         return "home.html";
     }
 
+    @GetMapping("/signup")
+    public String signUp() {return "SignUp.html";}
+
 }
