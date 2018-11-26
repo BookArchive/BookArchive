@@ -19,12 +19,7 @@
     <a  href="home.html" >Home</a>
     <a class="active" href="#dashboard" > Dashboard</a>
     <a href="RRLoginPage.html">Log Out</a>
-    <div class="search-container">
-        <form action="searchresults.html" method= "post">
-            <input type="text" placeholder="Search" name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
+    
 </div>
 
 <div id="data-here">
@@ -34,7 +29,7 @@
 <div id="lower-functions">
    
 </div>
-    <div id="addBook">
+    <div style="padding-left:80px" id="addBook">
 
             <label for="title" ><b>Title</b></label><br>
             <input type="text" id="bTitle" placeholder="Enter Title" name="title" required><br>
@@ -46,7 +41,7 @@
             <input type="text" id="subject" placeholder="Enter Course Subject (ex: UCLR) " name="subject" required><br>
 
             <label for="courseNum" ><b>Course Number</b></label><br>
-            <input type="number" id="courseNum" placeholder="Enter Username" name="courseNum" required><br>
+            <input type="number" id="courseNum" placeholder="Enter Course Number" name="courseNum" required><br>
 
             <button class = "button" id="submit" onclick="addBook()">  Add book  </button>
     </div>
@@ -60,14 +55,15 @@
             "title": document.getElementById('bTitle').value,
             "author": document.getElementById('author').value,
             "subject": document.getElementById('subject').value,
-            "courseNum": document.getElementById('courseNum').value,
+            "classNum": document.getElementById('courseNum').value,
             "ownerID": user.id
         }
+        console.log(document.getElementById('courseNum').value);
         $.postJSON("api/savebook",book,(data)=>{
             if(data == null){
-                alert("failed to upload book info");
+                
             }else{
-                alert("success!");
+              
             }
         })
     }
@@ -81,8 +77,8 @@ $(function(){
                 console.log(data);
                 window.location.replace("/");
             }else{
-                document.getElementById('data-here').innerHTML += ("<H1> Welcome "+data.username+"</H1>");
-                document.getElementById('data-here').innerHTML += ("<H3> major: "+data.major+"</H3>")
+                document.getElementById('data-here').innerHTML += ("<H1 style='padding-left:80px'> Welcome "+data.username+"</H1>");
+                document.getElementById('data-here').innerHTML += ("<H3 style='padding-left:80px'> major: "+data.major+"</H3>")
                 user = data;
                 console.log(data);
             }

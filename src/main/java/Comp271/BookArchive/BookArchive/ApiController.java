@@ -31,7 +31,7 @@ public class ApiController {
 
     @PostMapping("/api/savebook")
     public Book saveBook(@RequestBody Book b){
-        System.out.println();
+        System.out.println(b.getClassNum());
         return bookService.save(b);
     }
 

@@ -596,7 +596,7 @@
           city: "Duckburg"
         },
         function(data,status){
-            alert("Data: " + data + "\nStatus: " + status);
+          
         });
     });
 });
@@ -698,9 +698,8 @@ var countResults = 0;
 function classBtnClick(theId){
      var str = $(theId).attr("id");
      var arr = theId.split("-");
-     alert(arr);
-     let int =0;
-     int = arr[1];
+    
+     let int = arr[1];
 
 
 
@@ -849,7 +848,7 @@ $.postJSON = function(url, data, callback) {
 
  $(".classbtn").click(()=>{
      var idOfBtn = $(this).attr("id");
-     alert(idOfBtn);
+   
      var str = $(idOfBtn).text();
      var arr = str.split(" ");
      let int =0;
