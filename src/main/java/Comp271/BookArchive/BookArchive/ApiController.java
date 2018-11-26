@@ -4,10 +4,14 @@ package Comp271.BookArchive.BookArchive;
 import Comp271.BookArchive.BookArchive.DataModels.Book;
 import Comp271.BookArchive.BookArchive.DataModels.BookRepository;
 import Comp271.BookArchive.BookArchive.DataModels.User;
+import Comp271.BookArchive.BookArchive.DataModels.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.NamedQuery;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +33,40 @@ public class ApiController {
     public Book saveBook(@RequestBody Book b){
         System.out.println();
         return bookService.save(b);
+    }
+
+    @GetMapping("/api/DashboardData")
+    public User dashboardUser(HttpServletRequest req){
+        System.out.println("/DashboardData");
+        Cookie[] cookies = req.getCookies();
+        if (cookies != null) {
+            for(Cookie c : cookies){
+                System.out.println(c.getName());
+                if(c.getName().equals("RamblerReadsUser")){
+                    User u = new User();
+                    u.setUsername(c.getValue());
+                    List<User> lOfUsers = userService.findByUsername(u.getUsername());
+                    u = lOfUsers.get(0);
+                    u.setPassword("");
+                    return u;
+                }
+            }
+        }
+        return null;
+    }
+
+    @PostMapping("/api/login")
+    public Boolean login(@RequestBody User u, HttpServletResponse response){
+        List<User> check = userService.findByUsername(u.getUsername());
+        if(check != null && check.size()>0){
+            if(check.get(0).getPassword().equals(u.getPassword()) == true){
+                Cookie cookie = new Cookie("RamblerReadsUser", check.get(0).getUsername());
+                cookie.setMaxAge(3600*24);
+               response.addCookie(cookie);
+               return true;
+            }
+        }
+        return false;
     }
 
     @PostMapping("/api/deleteuser")
@@ -54,19 +92,12 @@ public class ApiController {
 
     @GetMapping("/api/books")
     public List<Book> apiBook(){
-
-        Book[] arr = {new Book("Programming for Dummies","John Doe","COMP",170),
-                new Book("Useless English Book","Some Guy","ENGL",102)};
-
         List<Book> books = (List<Book>) bookService.findAll();
         return books;
     }
 
     @PostMapping("/api/booksbyclass")
     public List<Book> apiBookByClass(@RequestBody Book b){
-        System.out.println(b.getSubject());
-        System.out.println(b.getClassNum());
-        //return bookService.findAll();
         return bookService.findByClass(b.getSubject(),b.getClassNum());
     }
 

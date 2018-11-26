@@ -27,6 +27,24 @@
 </div>
 
 <p style="padding-left:100px" > nothing here yet </p>
-<a style="padding-left:100px" href="home.html">go back</a>
+<a style="padding-left:100px" href="/home">go back</a>
 </body>
+<script>
+$(function(){
+    function dataReq(){
+        $.get("/api/DashboardData",(data)=>{
+        if(data == ""){
+            console.log(data);
+            window.location.replace("/");
+        }else{
+            console.log("the data{"+data+"}");
+        }
+    });
+    }
+    dataReq();
+    
+});
+
+
+</script>
 </html>
