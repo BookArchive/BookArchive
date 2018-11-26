@@ -32,7 +32,7 @@
 </div>
 
 <div id="lower-functions">
-    <button class = "button" id="logoutBtn">LogOut</button><br>
+   
 </div>
     <div id="addBook">
 
@@ -89,11 +89,6 @@ $(function(){
         });
     }
     dataReq();
-    $("#logoutBtn").click(()=>{
-        $.get("/api/logout",(data)=>{
-            window.location.replace("/");
-        });
-    });
 
     $.postJSON = function(url, data, callback) {
     return jQuery.ajax({

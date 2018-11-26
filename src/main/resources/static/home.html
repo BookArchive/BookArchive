@@ -23,14 +23,14 @@
 
 <div class="topnav">
     <a class="active" href="#home">Home</a> 
-    <a href="dashboard.html">Dashboard</a>
-    <a href="RRLoginPage.html">Log Out</a>
-    <div class="search-container">
+    <a href="/dashboard">Dashboard</a>
+    <a id="logoutBtn">Log Out</a>
+    <!-- <div class="search-container">
         <form action="api/user" method= "get">
             <input type="text" placeholder="Search" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-    </div>
+    </div>-->
 </div>
 
 
@@ -690,7 +690,11 @@ function displayBookData(input) {
 
 var countResults = 0;
 
-
+   $("#logoutBtn").click(()=>{
+        $.get("/api/logout",(data)=>{
+            window.location.replace("/");
+        });
+    });
 function classBtnClick(theId){
      var str = $(theId).attr("id");
      var arr = theId.split("-");
