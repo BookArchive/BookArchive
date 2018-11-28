@@ -1,14 +1,25 @@
 package Comp271.BookArchive.BookArchive.DataModels;
 
-import javax.annotation.Generated;
+import ch.qos.logback.core.joran.spi.NoAutoStart;
 
+import javax.annotation.Generated;
+import javax.persistence.*;
+
+@Entity
+@NamedQueries({@NamedQuery(name = "Book.findByTitle",query = "SELECT b FROM Book b WHERE b.title =:title"),
+        @NamedQuery(name = "Book.findByClass",query = "SELECT b FROM Book b WHERE b.subject =:subject AND b.classNum =:classNum")})
+
+@Table(name = "Books")
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String title;
     private String author;
     private String subject;
     private int classNum;
+    private long ownerID;
 
 
     public  Book(){}
@@ -51,4 +62,21 @@ public class Book {
     public int getClassNum() {
         return classNum;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getOwner() {
+        return ownerID;
+    }
+
+    public void setOwner(long owner) {
+        this.ownerID = owner;
+    }
+
 }

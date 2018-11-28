@@ -1,0 +1,96 @@
+*  {
+      box-sizing: border-box;
+  }
+
+
+  /* Center website */
+  .Mmain {
+      max-width: 1000px;
+      margin: auto;
+  }
+
+
+  .Mrow {
+      margin: 10px -16px;
+  }
+
+  /* Add padding BETWEEN each column */
+  .Mrow,
+  .Mrow > .Mcolumn {
+      padding: 4px;
+  }
+
+
+  /* Clear floats after rows */
+  .Mrow:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Center website */
+.Mmain {
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+.Mrow {
+    margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.Mrow,
+.Mrow > .Mcolumn {
+    padding: 5px;
+}
+
+/* Create three equal columns that floats next to each other */
+.Mcolumn {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */
+.Mrow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 5px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.Mbtn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.Mbtn:hover {
+  background-color: #ddd;
+}
+
+.Mbtn.active {
+  background-color: #666;
+  color: white;
+}

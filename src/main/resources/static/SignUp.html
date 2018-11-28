@@ -1,0 +1,131 @@
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div id="signup form">
+            <label for="username" ><b>Username</b></label>
+            <input type="text" id="unametext" placeholder="Enter a Username" name="username" required>
+
+            <label for="username" ><b>Major</b></label>
+            <input type="text" id="majortext" placeholder="Enter your Major" name="major" required>
+            
+            <label for="password"><b>Password</b></label>
+            <input type="password" id="pwordtext" placeholder="Enter a Password" name="password" required>
+
+            <label for="cpassword"><b>Confirm Password</b></label>
+            <input type="password" id="cpwordtext" placeholder="Confirm Password" name="cpassword" required>
+    
+            <button id="submit" onclick="subOnClick()">  Sign up  </button>
+
+    </div>
+</html>
+<script>
+    function subOnClick(){
+        if(checkPasswords()==true){
+            $.postJSON("/api/saveuser",{
+                "username": document.getElementById("unametext").value,
+                "password": document.getElementById("pwordtext").value,
+                "major": document.getElementById("majortext").value
+            },(data)=>{
+                if(data.username === "USERNAME ALREADY EXISTS"){
+                  
+                }else{
+                    window.location.replace("/");
+                }
+            });
+        }else{
+          
+        }
+       
+    }
+
+    function checkPasswords(){
+        pWord = document.getElementById("pwordtext").value;
+        cPWord = document.getElementById("cpwordtext").value;
+        console.log(pWord);
+        console.log(cPWord);
+        return pWord==cPWord;
+    }
+$(()=>{
+     $.postJSON = function(url, data, callback) {
+        return jQuery.ajax({
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        'type': 'POST',
+        'url': url,
+        'data': JSON.stringify(data),
+        'dataType': 'json',
+        'success': callback
+        });
+    }
+});
+</script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+/* form {border: 3px solid #f1f1f1;} */
+
+body {
+
+    background-color: #000000;
+    color: #922247;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #FEBD18;
+    color: #922247;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+#SignupSubmit {
+    background-color: #922247;
+    color: #FEBD18;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.imgcontainer {
+    text-align: center;
+    margin: 36px 0 36px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+
+
+</style>
